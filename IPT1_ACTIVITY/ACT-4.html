@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" href="../Images/Crazy.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <a href="../html/index.html"><img src="../Images/Crazy.png" alt="Logo"></a>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="../html/About.html">About</a>
+            <a href="../html/Profile.html">Profile</a>
+            <a href="../html/Biodata.html">Biodata</a>
+            <a href="../html/Contacts.html">Contacts</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content">
+            <h1>Hi There, <br> I'm <span id="name-typing" class="name"></span></h1>
+            <p>I Am Into <span id="highlight-typing" class="highlight"></span></p>                
+            <a href="html/About.html" class="btn">About Me</a>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=100011552898927">
+                    <img src="../Images/fac.png" alt="Facebook">
+                </a>
+                <a href="https://x.com/aaaaadaigo">
+                    <img src="../Images/x.png" alt="Twitter">
+                </a>
+                <a href="https://www.instagram.com/aaaaadaigo/">
+                    <img src="../Images/ins1.png" alt="Instagram">
+                </a>
+                <a href="https://www.threads.net/@aaaaadaigo">
+                    <img src="../Images/thre.png" alt="Threads">
+                </a>
+                <a href="https://mail.google.com/mail/u/0/#inbox">
+                    <img src="../Images/gmail.png" alt="Gmail">
+                </a>
+            </div>
+            
+        </div>
+        <div class="avatar">
+            <div class="avatar-container">
+                <img src="../Images/2x2.png" alt="Front" class="avatar-front">
+                <img src="../Images/2x2.1.png" alt="Back" class="avatar-back">
+            </div>
+        </div>
+        
+    </main>
+    <script src="../script/script.js"></script>
+
+    <style>
+            /*Homepage*/
+    .hero-section {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        min-height: 100vh; /* Full screen height */
+        padding: 5rem;
+        background: url('background-pattern.png') no-repeat center center/cover;
+        text-align: center; /* Center-align text */
+    }
+    .content {
+        max-width: 50%;
+        margin-bottom: 2rem; /* Add spacing between content and avatar */
+    }
+    .content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 5.5rem;
+        margin-top: 5.5rem;
+        line-height: 1.3;
+    }
+    .content .name {
+        color: orange;
+        
+    }
+    .content p {
+        font-size: 2.5rem; /* Adjust the size as needed */
+        margin-bottom: 1rem; /* Optional: Adds some spacing below */
+    }
+    
+    .content .highlight {
+        font-size: 2.5rem;
+        color: red;
+        font-weight: bold;
+        display: block; /* Ensure it appears on a new line */
+        text-transform: uppercase; /* Optional: Make the text uppercase */
+        
+    }
+    /* General Highlight Styling */
+.highlight {
+    font-size: 2.5rem;
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: fade-in 0.5s ease-in-out;
+}
+
+/* Keyframe Animation for Fading Text */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+    .btn {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.75rem 3.5rem;
+        background-color: purple;
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .btn:hover {
+        background-color: darkviolet; /* Changes button color on hover */
+        transform: scale(1.1); /* Slightly enlarges the button */
+    }
+    .social-icons {
+        margin-top: 2rem;
+    }  
+    .social-icons a {
+        margin-right: 1.5rem;
+    }
+    .social-icons img {
+        width: 35px; /* Adjust the size as needed */
+        height: 35px; /* Maintain aspect ratio */
+        border-radius: 100%; /* Optional: Makes icons circular */
+        transition: transform 0.3s; /* Adds a hover effect */
+    }
+    .social-icons img:hover {
+        transform: scale(2.5); /* Grows the icon slightly on hover */
+    }
+    .avatar img {
+        border-radius: 100%;
+        width: 550px;
+        height: 550px;
+        box-shadow: 0 4px 100px rgba(0, 0, 0, 0.2);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        margin-top: 2rem; /* Adds spacing above the avatar */
+    }
+    .avatar img:hover {
+        transform: scale(1.1); /* Slightly enlarges the avatar on hover */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Adds a deeper shadow */
+    }
+    /* Avatar Container */
+.avatar-container {
+    position: relative;
+    width: 550px;
+    height: 550px;
+    perspective: 1000px; /* Allows the 3D flip effect */
+}
+
+/* Front and Back Images */
+.avatar-front, .avatar-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back face when flipped */
+    transition: transform 0.6s ease; /* Smooth transition */
+}
+
+/* The back image is initially rotated 180 degrees */
+.avatar-back {
+    transform: rotateY(180deg);
+}
+
+/* Avatar flip effect on hover */
+.avatar-container:hover .avatar-front {
+    transform: rotateY(180deg); /* Rotates front image to the back */
+}
+
+.avatar-container:hover .avatar-back {
+    transform: rotateY(0deg); /* Rotates back image to the front */
+}
+
+/* Animation for the slide-in effect for "Abraham Daigo" */
+@keyframes slide-in-name {
+    from {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateX(0); /* Move to normal position */
+        opacity: 1; /* Become visible */
+    }
+}
+/* Optional animation for sliding effect for "Web Development" */
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Add this to make the cursor blink */
+.blinking-cursor {
+    display: inline-block;
+    width: 2px;
+    background-color: black;
+    animation: blink 0.75s step-end infinite;
+}
+
+/* Keyframe Animation for the cursor blink */
+@keyframes blink {
+    50% {
+        background-color: transparent;
+    }
+}
+
+/* Apply the blinking cursor to the typed text */
+#name-typing::after,
+#highlight-typing::after {
+    content: '|'; /* The blinking cursor character */
+    display: inline-block;
+    margin-left: 5px; /* Optional: Adds space between the text and cursor */
+    animation: blink 0.75s step-end infinite;
+}
+
+/*end of homepage*/
+header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #000000;
+        color: #fff;
+        padding: 20px 20px;
+    }
+
+    header nav a {
+        color: rgb(255, 255, 255); /* Ensure it stays white */
+    }
+    
+    /* Logo container */
+    header div img {
+        width: 200px;
+        height: 50px;
+    }
+
+    /* Navigation styles */
+    nav {
+        display: flex;
+    }
+
+    nav a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 20px;
+        padding: 5px 10px;
+        transition: background-color 0.3s;
+        font-family: "Nunito";
+    }
+
+    nav a:hover {
+        background-color: #555;
+        border-radius: 5px;
+    }
+    /*Starts of About*/
+    /* Main section styling */
+    main {
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    </style>
+    <script>
+        // script.js//
+function printBiodata() {
+    window.print();
+}
+
+function typeText(element, text, delay = 100, callback = null) {
+    let index = 0;
+    element.textContent = ""; 
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, delay);
+        } else if (callback) {
+            setTimeout(callback, 1000); 
+        }
+    }
+    type();
+}
+
+
+function backspaceText(element, text, delay = 100, callback = null) {
+    let index = text.length;
+    function backspace() {
+        if (index > 0) {
+            element.textContent = text.substring(0, index - 1);
+            index--;
+            setTimeout(backspace, delay);
+        } else if (callback) {
+            setTimeout(callback, 100);
+        }
+    }
+    backspace();
+}
+
+function typeRotatingText(element, texts, typingSpeed = 550, backspacingSpeed = 150) {
+    let currentIndex = 0;
+    function rotate() {
+        const text = texts[currentIndex];
+        typeText(element, text, typingSpeed, () => {
+            backspaceText(element, text, backspacingSpeed, () => {
+                currentIndex = (currentIndex + 1) % texts.length; 
+                rotate(); 
+            });
+        });
+    }
+    rotate();
+}
+
+const nameElement = document.getElementById("name-typing");
+const highlightElement = document.getElementById("highlight-typing");
+
+const highlightTexts = ["Web Development", "Configure Router", "Frontend Development", "Computer Network Architect"];
+
+typeText(nameElement, "Abraham Daigo", 150);
+
+typeRotatingText(highlightElement, highlightTexts, 150, 50);
+
+
+
+    </script>
+
+</body>
+</html>
